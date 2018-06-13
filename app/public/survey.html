@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+    <!--Glyphicons-->
+    <link href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+        rel="stylesheet" crossorigin="anonymous">
+
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+    <style>
+        h1 {
+            font-family: 'Lobster', cursive;
+            font-size: 800%;
+        }
+
+        .fa-list-alt {
+            font-family: Arial, Helvetica, sans-serif
+        }
+    </style>
+
+    <title>Friends Survey</title>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Survey Questions</h1>
+                <hr>
+                <br>
+
+                <h2>About You</h2>
+                <br>
+
+                <form>
+                    <div class="form-group">
+                        <h4>Name (Required)</h4>
+                        <input type="text" class="form-control" id="user-name" required>
+                    </div>
+                    <div class="form-group">
+                        <h4>Link to Photo Image (Required)</h4>
+                        <input type="text" class="form-control" id="image-url" required>
+                    </div>
+
+                    <h4>Question #1</h4>
+                    <div class="form-group">
+                        <label>How likely would you pick the east side of the river, over the west?</label>
+                        <select class="form-control" id="question-1">
+                            <option>1 Least Likely</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5 Most Likely</option>
+                        </select>
+                    </div>
+
+                    <h4>Question #2</h4>
+                    <div class="form-group">
+                        <label>Would you go to Blue Door over Matt's Bar?</label>
+                        <select class="form-control" id="question-2">
+                            <option>1 Least Likely</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5 Most Likely</option>
+                        </select>
+                    </div>
+
+                    <h4>Question #3</h4>
+                    <div class="form-group">
+                        <label>You prefer the old over the new?</label>
+                        <select class="form-control" id="question-3">
+                            <option>1 Least Likely</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5 Most Likely</option>
+                        </select>
+                    </div>
+
+                    <h4>Question #4</h4>
+                    <div class="form-group">
+                        <label>Your Fridays usually consist of jazz and a night cap?</label>
+                        <select class="form-control" id="question-4">
+                            <option>1 Least Likely</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5 Most Likely</option>
+                        </select>
+                    </div>
+
+                    <h4>Question #5</h4>
+                    <div class="form-group">
+                        <label>You would consider yourself underrated for the most part?</label>
+                        <select class="form-control" id="question-5">
+                            <option>1 Least Likely</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5 Most Likely</option>
+                        </select>
+                    </div>
+
+                    <h4>Question #6</h4>
+                    <div class="form-group">
+                        <label>The "big city" just isn't your thing?</label>
+                        <select class="form-control" id="question-6">
+                            <option>1 Least Likely</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5 Most Likely</option>
+                        </select>
+                    </div>
+
+                    <h4>Question #7</h4>
+                    <div class="form-group">
+                        <label>Would prefer to go to the Hmong Market over Midtown Global?</label>
+                        <select class="form-control" id="question-7">
+                            <option>1 Least Likely</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5 Most Likely</option>
+                        </select>
+                    </div>
+
+                    <h4>Question #8</h4>
+                    <div class="form-group">
+                        <label>Could use a stroll with some Gilded Age mansions?</label>
+                        <select class="form-control" id="question-8">
+                            <option>1 Least Likely</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5 Most Likely</option>
+                        </select>
+                    </div>
+
+                    <h4>Question #9</h4>
+                    <div class="form-group">
+                        <label>Think Hockey and Soccer are more your cup of tea?</label>
+                        <select class="form-control" id="question-9">
+                            <option>1 Least Likely</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5 Most Likely</option>
+                        </select>
+                    </div>
+
+                    <h4>Question #10</h4>
+                    <div class="form-group">
+                        <label>Got a new sense of purpose in life after watching the MPR Raccoon!?</label>
+                        <select class="form-control" id="question-10">
+                            <option>1 Least Likely</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5 Most Likely</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+
+        //Submit Button for Survey
+        $(".submit").on("click", function (event) {
+            event.preventDefault();
+
+            var newProfile = {
+                userName: $("#user-name").val().trim(),
+                imageURL: $("#image-url").val().trim(),
+                question1: $("#question-1").val().trim(),
+                question2: $("#question-2").val().trim(),
+                question3: $("#question-3").val().trim(),
+                question4: $("#question-4").val().trim(),
+                question5: $("#question-5").val().trim(),
+                question6: $("#question-6").val().trim(),
+                question7: $("#question-7").val().trim(),
+                question8: $("#question-8").val().trim(),
+                question9: $("#question-9").val().trim(),
+                question10: $("#question-10").val().trim()
+            };
+
+            console.log(newProfile);
+
+            $.post("/api/profile", newProfile,
+                function (data) {
+
+                    // Tell user profile was added
+                    //alert("Yay! You're Profile Has Been Created");
+
+                    // Clear the form when submitting
+                    $("#user-name").val("");
+                    $("#image-url").val("");
+                    $("#question-1").val("");
+                    $("#question-2").val("");
+                    $("#question-3").val("");
+                    $("#question-4").val("");
+                    $("#question-5").val("");
+                    $("#question-6").val("");
+                    $("#question-7").val("");
+                    $("#question-8").val("");
+                    $("#question-9").val("");
+                    $("#question-10").val("");
+                });
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>

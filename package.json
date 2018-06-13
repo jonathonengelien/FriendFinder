@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/jonathonengelien/FriendFinder/issues"
   },
-  "homepage": "https://github.com/jonathonengelien/FriendFinder#readme"
+  "homepage": "https://github.com/jonathonengelien/FriendFinder#readme",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "mysql": "^2.15.0"
+  }
 }
