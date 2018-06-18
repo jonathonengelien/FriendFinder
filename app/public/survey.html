@@ -61,6 +61,7 @@
                     <div class="form-group">
                         <label>How likely would you pick the east side of the river, over the west?</label>
                         <select class="form-control" id="question-1" required>
+                            <option>Please Make A Selection</option>
                             <option value="1">1 Least Likely</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -73,6 +74,7 @@
                     <div class="form-group">
                         <label>Would you go to Blue Door over Matt's Bar?</label>
                         <select class="form-control" id="question-2" required>
+                            <option>Please Make A Selection</option>
                             <option value="1">1 Least Likely</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -85,6 +87,7 @@
                     <div class="form-group">
                         <label>You prefer the old over the new?</label>
                         <select class="form-control" id="question-3" required>
+                            <option>Please Make A Selection</option>
                             <option value="1">1 Least Likely</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -97,6 +100,7 @@
                     <div class="form-group">
                         <label>Your Fridays usually consist of jazz and a night cap?</label>
                         <select class="form-control" id="question-4" required>
+                            <option>Please Make A Selection</option>
                             <option value="1">1 Least Likely</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -109,6 +113,7 @@
                     <div class="form-group">
                         <label>You would consider yourself underrated for the most part?</label>
                         <select class="form-control" id="question-5" required>
+                            <option>Please Make A Selection</option>
                             <option value="1">1 Least Likely</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -121,6 +126,7 @@
                     <div class="form-group">
                         <label>The "big city" just isn't your thing?</label>
                         <select class="form-control" id="question-6" required>
+                            <option>Please Make A Selection</option>
                             <option value="1">1 Least Likely</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -133,6 +139,7 @@
                     <div class="form-group">
                         <label>Would prefer to go to the Hmong Market over Midtown Global?</label>
                         <select class="form-control" id="question-7" required>
+                            <option>Please Make A Selection</option>
                             <option value="1">1 Least Likely</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -145,6 +152,7 @@
                     <div class="form-group">
                         <label>Could use a stroll with some Gilded Age mansions?</label>
                         <select class="form-control" id="question-8" required>
+                            <option>Please Make A Selection</option>
                             <option value="1">1 Least Likely</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -157,6 +165,7 @@
                     <div class="form-group">
                         <label>Think Hockey and Soccer are more your cup of tea?</label>
                         <select class="form-control" id="question-9" required>
+                            <option>Please Make A Selection</option>
                             <option value="1">1 Least Likely</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -169,6 +178,7 @@
                     <div class="form-group">
                         <label>Got a new sense of purpose in life after watching the MPR Raccoon!?</label>
                         <select class="form-control" id="question-10" required>
+                            <option>Please Make A Selection</option>
                             <option value="1">1 Least Likely</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -184,54 +194,84 @@
     </div>
 
 
-    <script type="text/javascript">
+    <div class="modal fade bd-example-modal-lg" id="results-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title large-modal-title">Best Match</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div>
+                                <img id='matched-image' class="rounded matched-image" src="" alt="matched Image">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div>
+                                <h3>Name:
+                                    <span id="matched-name"></span>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        //Submit Button for Survey
-        $(".submit").on("click", function (event) {
+
+    <script>
+        $("#submit-button").on("click", function (event) {
             event.preventDefault();
 
-            var newProfile = {
-                userName: $("#user-name").val().trim(),
-                imageURL: $("#image-url").val().trim(),
-                question1: $("#question-1").val().trim(),
-                question2: $("#question-2").val().trim(),
-                question3: $("#question-3").val().trim(),
-                question4: $("#question-4").val().trim(),
-                question5: $("#question-5").val().trim(),
-                question6: $("#question-6").val().trim(),
-                question7: $("#question-7").val().trim(),
-                question8: $("#question-8").val().trim(),
-                question9: $("#question-9").val().trim(),
-                question10: $("#question-10").val().trim()
-            };
 
-            console.log(newProfile);
+            var fieldChecker = 0;
 
-            $.post("/api/profile", newProfile,
-                function (data) {
+            //check for emptied field
+            $('.form-control').each(function () {
+                if ($(this).val() !== '') {
+                    fieldChecker++;
+                }
+            });
 
-                    // Tell user profile was added
-                    //alert("Yay! You're Profile Has Been Created");
+            //validate all fields are entered
+            if (fieldChecker !== 12) {
+                alert("Please Enter All Fields Before Submitting");
+            } else {
+                //create new friend to be submitted
+                var newFriend = {
+                    name: $("#user-name").val(),
+                    photo: $("#image-url").val(),
+                    scores: [
+                        $("#question-1").val(),
+                        $("#question-2").val(),
+                        $("#question-3").val(),
+                        $("#question-4").val(),
+                        $("#question-5").val(),
+                        $("#question-6").val(),
+                        $("#question-7").val(),
+                        $("#question-8").val(),
+                        $("#question-9").val(),
+                        $("#question-10").val(),
+                    ]
+                };
 
-                    // Clear the form when submitting
-                    $("#user-name").val("");
-                    $("#image-url").val("");
-                    $("#question-1").val("");
-                    $("#question-2").val("");
-                    $("#question-3").val("");
-                    $("#question-4").val("");
-                    $("#question-5").val("");
-                    $("#question-6").val("");
-                    $("#question-7").val("");
-                    $("#question-8").val("");
-                    $("#question-9").val("");
-                    $("#question-10").val("");
+                // AJAX post the data to the friends API.
+                $.post("/api/friends", newFriend, function (matchedFriend) {
+                    // Grab the best matched from the AJAX response.
+                    $("#matched-name").text(matchedFriend.name);
+                    $("#matched-image").attr("src", matchedFriend.photo);
                 });
+
+                $("#results-modal").modal("toggle");
+            };
         });
-
-
     </script>
-
 
 </body>
 
